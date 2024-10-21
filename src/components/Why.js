@@ -20,21 +20,21 @@ function Why() {
           <h2 className="overlayHeading">Keep Certifications & Awards</h2>
         </div>
       </div>
-
+    <div className="carddd">
       <div className="cardSection">
         <div className="card">
           <div className="icon">
-            <img src={one} alt="Convenient Study Time" className="cardIcon study" />
+            <img
+              src={one}
+              alt="Convenient Study Time"
+              className="cardIcon study"
+            />
           </div>
         </div>
 
         <div className="card">
           <div className="icon placement">
-            <img
-              src={two}
-              alt="Placement Assistance"
-              className="cardIcon"
-            />
+            <img src={two} alt="Placement Assistance" className="cardIcon" />
           </div>
         </div>
 
@@ -49,7 +49,8 @@ function Why() {
             <img src={four} alt="Hands-On Projects" className="cardIcon" />
           </div>
         </div>
-
+      </div>
+      <div className="cardSection">
         <div className="card">
           <div className="icon project">
             <img src={five} alt="Hands-On Projects" className="cardIcon" />
@@ -66,6 +67,7 @@ function Why() {
             <img src={seven} alt="Hands-On Projects" className="cardIcon" />
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

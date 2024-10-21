@@ -59,7 +59,7 @@ function SingleDemand() {
       ) : (
         <p className="load">Loading...</p>
       )}
-      <Logos/>
+      {/* <Logos/> */}
     </div>
   );
 }
