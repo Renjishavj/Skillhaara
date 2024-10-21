@@ -1333,8 +1333,8 @@ display: none;
     width: 300px;
    margin-top: 50px;
   text-align: justify;
-  margin-left: -50px;
-  
+ 
+  color: black;
   }
  
 }
@@ -1384,7 +1384,7 @@ display: none;
 .overview-main1 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #333;
+  
 }
 
 .eda-desc {
@@ -1397,6 +1397,8 @@ display: none;
   justify-content: space-between;
   gap: 20px; /* Space between the cards */
   margin-top: 50px;
+  margin-left: 130px;
+  margin-right: 100px;
 }
 
 .info-card {
@@ -1410,11 +1412,19 @@ display: none;
 }
 
 /* Media query for medium-sized screens (tablets) */
-@media (min-width: 600px) {
+@media (max-width: 768px) {
+  .info-cards-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: 0px;
+  }
+
   .info-card {
-    flex: 1 1 48%; /* Each card takes up nearly half the width on tablets */
+    width: 100%; /* Make the card take most of the width on smaller screens */
   }
 }
+
 
 /* Media query for large-sized screens (desktops) */
 @media (min-width: 992px) {
@@ -1427,6 +1437,8 @@ display: none;
 .enroll-now {
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 30px;
+  color: black;
 }
 
 /* Margin adjustments for larger screens */
@@ -1439,13 +1451,14 @@ display: none;
 }
 
 .card-title {
-  font-size: 1.5rem;
+  font-size: 20px;
   margin-bottom: 10px;
-  color: #333;
+  color:#07023b;
+  font-weight: 600;
 }
 
 .card-description {
-  color: #666;
+  color: black;
   margin-left: 30px;
 }
 
