@@ -59,17 +59,28 @@
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    font-size: 30px;
+    font-size: 34px;
     font-stretch: extra-condensed;
     font-weight: 600;
-    border-bottom: 2px solid transparent;
-    border-image: linear-gradient(0.25turn, #10053a, #4856eb, #f9f9f9, #07023b);
+    /* border-bottom: 2px solid transparent;
+    border-image: linear-gradient(0.25turn, #10053a, #4856eb, #f9f9f9, #07023b); */
     border-image-slice: 1;
     text-align: center; 
-    width: 30%;
+    width: 100%;
     align-items: center;
+   color: #07023b;
+    border-radius: 10px;
+    
     /* margin-left: 500px; */
     
+}
+.head-dis{
+  display: flex;
+ 
+}
+.hor-dis{
+  color: #2819d3;
+  width: 200px;
 }
 @media only screen and (max-width: 1200px) {
   .top-tech {
@@ -375,6 +386,29 @@ margin-bottom: 20px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color:#07023b;
+}
+.responsive-form-dem{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+  background-color: white;
+  border-radius: 8px;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color:#07023b;
+}
+.view-main{
+  /* background-color: #e3ecef; */
+}
+
+.responsive-form input:focus,
+.responsive-form select:focus,
+.responsive-form textarea:focus {
+  background-color: #e8f0fe;
+  outline: none;
 }
 
 .form-group {
@@ -427,24 +461,24 @@ margin-bottom: 20px;
   justify-content: center;
   
 }
+
 .submit-btn {
   display: block;
   width: 30%;
  /* margin-left: 180px; */
   padding: 12px;
-  background-color: rgb(10, 20, 60); 
+   background-color: white;
+   color: #10053a;
   /* background-image: linear-gradient(to right, #ff416c, #ff4b2b); */
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: 700;
 }
 
-.submit-btn:hover {
-  background-color:rgb(26, 41, 102) ;
-  
-}
+
 
 @media (max-width: 768px) {
   .form-group {
@@ -459,7 +493,7 @@ margin-bottom: 20px;
 }
 .description{
   text-align: center;
-  color: rgb(26, 41, 102) ;
+  color: white ;
   font-weight: 600;
 }
 
@@ -546,16 +580,57 @@ margin-bottom: 20px;
   }
 }
 .sub-msg{
-  color: green;
+  color: white;
  margin-left: 120px;
  font-size: 20px;
  
+}
+.fex-vieweach{
+  display: flex;
+  
+}
+.fex-one{
+  width: 900px;
+ 
+}
+.div-over{
+  background-color: #dce1ea;
+  margin-left: 100px;
+  margin-top: 30px;
+  margin-right: 50px;
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+.div-overv{
+  background-color: #dce1ea;
+  margin-left: 100px;
+  margin-top: 0px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+  padding-top: 20px;
+ padding-bottom: -10px;
 }
 @media (max-width: 768px) {
   .sub-msg {
     margin-left: 60px; 
     font-size: 18px;
   }
+  .fex-one{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+  }
+  .fex-vieweach{
+    display: flex;
+    flex-direction: column;
+  }
+  .div-over{
+    margin-left: -20px;
+  }
+  .div-overv{
+    margin-left: -20px;
+  }
+  
 }
 
 
@@ -564,6 +639,23 @@ margin-bottom: 20px;
     margin-left: 20px; 
     font-size: 16px; 
     text-align: center; 
+  }
+  .fex-one{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+  .fex-vieweach{
+    display: flex;
+    flex-direction: column;
+  }
+  .div-over{
+    width: 100%;
+    margin-left: 8px;
+  }
+  .div-overv{
+    width: 100%;
+    margin-left: 8px;
   }
 }
 .verify-msg{
@@ -586,16 +678,20 @@ margin-bottom: 20px;
     display: flex;
     flex-direction: column;
   }
+  .overview-main1{
+    margin-left: -90px;
+  }
 }
 
 /* eda */
 
 .overview-main {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 50px;
   margin-bottom: 10px;
-  text-align: center;
+  text-align: left;
+  margin-left: 120px;
   color: rgb(10, 20, 60);
 }
 .overview-main1 {
@@ -608,7 +704,7 @@ margin-bottom: 20px;
 }
 @media (max-width: 480px) {
   .overview-main1 {
-    padding-left: 20px;
+    padding-left:   100px;
     font-size: 20px;
   }
 }
@@ -650,19 +746,21 @@ margin-bottom: 20px;
   margin-left: 120px;
   margin-right: 110px;
   text-align: justify;
-  font-size: 16px;
+  font-size: 18px;
+  margin-top: 20px;
 }
 .eda-desc-tech {
   margin-left: 120px;
   margin-right: 110px;
   text-align: justify;
-  font-size: 16px;
+  font-size: 18px;
   max-width: 600px;
 }
 @media screen and (max-width: 480px){
   .eda-desc-tech{
-    max-width: 500px;
+    width: 350px;
     margin-left: 20px;
+    margin-top: 20px;
   } 
 }
 
@@ -677,15 +775,22 @@ margin-bottom: 20px;
   margin-left: 140px;
   margin-right: 110px;
   text-align: justify;
-  font-size: 16px;
+  font-size: 18px;
+  margin-bottom: 100px;
 }
-
+.res-vieweach{
+  margin-top: 230px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  
+}
 .eda-form {
   padding-bottom: 150px;
+ 
 }
 
 @media screen and (max-width: 1024px) {
-  .eda-desc, .eda-ul, .eda-subhead {
+  .eda-desc,.eda-desc-view .eda-ul, .eda-subhead {
     margin-left: 60px;
     margin-right: 60px;
     font-size: 14px;
@@ -705,11 +810,31 @@ margin-bottom: 20px;
   .eda-desc, .eda-ul, .eda-subhead {
     margin-left: 30px;
     margin-right: 30px;
-    font-size: 14px;
+    font-size: 16px;
   }
-
+  .career-fex{
+    display: flex;
+    flex-direction: column;
+    margin-top: -100px;
+    width: 1200px;
+    margin-left: -40px;
+  }
+  .responsive-form-dem{
+    margin-top: -50px;
+    width: 800px;
+    margin-left: 140px;
+  }
+  .eda-desc-view{
+    display: none;
+  }
+  .eda-desc-tech{
+    text-align: left;
+    text-align: justify;
+   margin-left: 30px;
+  }
   .overview-main {
     font-size: 24px;
+    display: none;
   }
 
   .eda-subhead {
@@ -719,6 +844,9 @@ margin-bottom: 20px;
   .eda-form {
     padding-bottom: 80px;
   }
+  .res-vieweach{
+    margin-top: 0px;
+  }
 }
 
 
@@ -726,11 +854,23 @@ margin-bottom: 20px;
   .eda-desc, .eda-ul, .eda-subhead {
     margin-left: 20px;
     margin-right: 20px;
-    font-size: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    
   }
+  ul.eda-desc{
+    margin-left: 40px;
+  }
+  .square-fex{
+    font-weight: 700;
+  }
+ .res-vieweach{
+  margin-top: 0px;
+ }
 
   .overview-main {
     font-size: 20px;
+   display: none;
   }
 
   .eda-subhead {
@@ -815,8 +955,8 @@ margin-bottom: 20px;
 button[type="submit"] {
   width: 100%;
   height: 40px;
-  background-color: rgb(10, 20, 60);
-  color: #fff;
+ padding-bottom: 3px;
+  color:#07023b;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -826,7 +966,9 @@ button[type="submit"] {
   display: none;
 }
 button[type="submit"]:hover {
-  background-color: rgb(26, 41, 102);
+  background-color:#07023b;
+  color: white;
+  
 }
 @media (max-width: 768px) {
   .login-card {
@@ -835,8 +977,9 @@ button[type="submit"]:hover {
 }
 
 @media (max-width: 480px) {
+  
   .cardIcon{
-    margin-left: 30px;
+    margin-left: 0px;
   }
   .cardIconone{
     margin-left: 20px;
@@ -925,6 +1068,12 @@ display: none;
   display: flex;
   margin-top: 50px;
   gap: 50px;
+}
+.eda-form-divv{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -1078,7 +1227,7 @@ display: none;
 .headerText {
   font-size: 2vw; 
   font-weight: bold;
-  color: rgb(179, 192, 246);
+  color: rgb(120, 144, 240);
   margin-left: auto; 
   margin-right: auto; 
   text-align: center; 
@@ -1111,14 +1260,27 @@ display: none;
   color: #333;
   font-size: 28px;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.7); 
+  background-color: rgba(231, 232, 234, 0.7); 
   padding: 10px 20px;
+  border-radius: 10px;
 }
 
 .overlayHeading {
   margin: 0;
+  color: #130b6f;
+  font-weight: 700;
+  font-size: 30px;
 }
+.top-section{
+  display: flex;
 
+}
+.top-hr{
+  width: 100px;
+ 
+  border: 2px solid #0a143c;
+  margin-top: 80px;
+}
 .cardSection {
   display: flex;
   justify-content: center;
@@ -1134,7 +1296,7 @@ display: none;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   flex: 1;
-  max-width: 250px;
+  max-width: 150px;
   /* border: 2px solid #f16101; */
 }
 
@@ -1144,7 +1306,7 @@ display: none;
   color: #e76f51;
   margin-top: 12px;
   width: 130px;
-  margin-left: 50px;
+  margin-left: 0px;
 }
 
 .cardTitle {
@@ -1204,29 +1366,44 @@ display: none;
 .sub-ban-head {
   font-weight: 600;
   font-size: 28px;
+  color:#07023b;
+}
+.sub-ban-head:hover{
+  color: rgb(8, 30, 141);
+}
+.sub-ban-headone:hover{
+  color: rgb(8, 30, 141);
+}
+.sub-ban-headtwo:hover{
+  color: rgb(8, 30, 141);
 }
 .sub-ban-headone {
   font-weight: 600;
   font-size: 28px;
+  color: #07023b;
 }
 .sub-ban-headtwo {
   font-weight: 600;
   font-size: 28px;
+  color: #07023b;
 }
 
 
 .desc-subban {
-  color: gray;
+  color: rgb(34, 33, 33);
   font-size: 18px;
   border-left: 4px solid #07023b;
   padding-left: 5px;
+ 
 }
 
 .sub-banner {
   display: flex;
   align-items: center;
-  margin-left: 100px;
-  margin-right: 100px;
+  /* margin-left: 100px;
+  margin-right: 100px; */
+  background-color: #f0eded;
+  margin-top: 20px;
 }
 
 .bannimg {
@@ -1300,7 +1477,21 @@ display: none;
     margin-left: -100px;
     margin-right: 10px;
   }
-
+.career-fex{
+  display: flex;
+  flex-direction: column;
+  width: 780px;
+  margin-left: -120px;
+  margin-top: -120px;
+}
+.responsive-form-dem{
+  width: 400px;
+  margin-left: 125px;
+  margin-top: -20px;
+}
+.eda-desc-view{
+ display: none;
+}
   .sub-ban-head {
     font-size: 18px;
     width: 400px;
@@ -1334,7 +1525,7 @@ display: none;
    margin-top: 50px;
   text-align: justify;
  
-  color: black;
+
   }
  
 }
@@ -1391,6 +1582,16 @@ display: none;
  
   color: black;
 }
+.eda-desc-view {
+ background-color: rgb(235, 232, 232);
+  color: black;
+  margin-left: 120px;
+  margin-right: 110px;
+  text-align: justify;
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 15px;
+}
 .info-cards-container {
   display: flex;
   flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
@@ -1400,15 +1601,23 @@ display: none;
   margin-left: 130px;
   margin-right: 100px;
 }
+.scope-card{
+  background-color: #1b1f42;
+  
+}
 
 .info-card {
   flex: 1 1 100%; /* Default to full width for smaller screens */
   max-width: 100%; /* Ensure it doesn't exceed the screen width */
-  border: 2px solid rgb(7, 2, 59);
+ 
   border-radius: 8px;
   padding: 15px;
-  background-color: #f9f9f9;
+ 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.objective-card{
+  background-color: #cadce9;
+  color: white;
 }
 
 /* Media query for medium-sized screens (tablets) */
@@ -1435,12 +1644,41 @@ display: none;
 
 .career-description,
 .enroll-now {
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 30px;
+ font-size: 20px;
+ text-align:center;
+  margin-top: 80px;
   color: black;
+ 
+}
+.enroll-now{
+ border: 2px solid white;
+  border-radius: 25px;
+  padding: 15px;
+ text-align: center;
+  box-shadow: 10px 10px 5px -4px rgba(181,170,181,1);
 }
 
+.career-description-fex
+ {
+  margin-left: 130px;
+  margin-right: 10px;
+  margin-top: 150px;
+  color:#07023b;
+  width: 50%;
+  font-size: 18px;
+  text-align: justify;
+  background-color:#cadce9;
+  border-radius: 25px;
+  padding: 15px;
+  box-shadow: 10px 10px 5px -4px rgba(181,170,181,1);
+}
+.card-description-enroll{
+
+}
+.career-fex{
+  display: flex;
+  gap: 50px;
+}
 /* Margin adjustments for larger screens */
 @media (min-width: 992px) {
   .career-description,
@@ -1453,15 +1691,35 @@ display: none;
 .card-title {
   font-size: 20px;
   margin-bottom: 10px;
-  color:#07023b;
+  color:white;
   font-weight: 600;
 }
-
+.card-title-career {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color:rgb(32, 47, 76);
+  font-weight: 600;
+}
+.card-title-course {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color:rgb(32, 47, 76);
+  font-weight: 600;
+}
 .card-description {
-  color: black;
+  color: white;
   margin-left: 30px;
 }
-
+.card-description-obj{
+  color: rgb(32, 47, 76);
+  margin-left: 30px;
+}
+.card-description-obj {
+  color: rgb(32, 47, 76);
+  margin-left: 30px;
+  font-size: 16px;
+  font-weight: 700;
+}
 .carddd{
   display: flex;
   flex-direction: column;

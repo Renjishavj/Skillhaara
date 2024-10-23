@@ -2,9 +2,10 @@ import React from 'react'
 
 import "../assets/styles/style.css"
 import people from "../assets/images/cheerful-workers-watching-laptop_23-2147577254.avif"
-import Logos from './Logos'
+import Why from './Why'
 function Aboutus() {
   return (
+    <>
     <div className="container">
     <header className="header">
      
@@ -33,11 +34,9 @@ function Aboutus() {
       Expert and certified trainers deliver training in our modern and digital classroom environments and industry-grade labs. The training is based on immersive learning and takes advantage of the benefits of hybrid teaching to improve skill development outcomes along with genuine placement assistance to truly transform the lives of the learners.
       </p>
     </section>
-    <h1 className='accredated'>Accredited By</h1>
-    <div>
-      <Logos/>
-    </div>
   </div>
+  <Why/>
+    </>
   )
 }
 

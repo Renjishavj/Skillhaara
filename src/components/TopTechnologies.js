@@ -29,6 +29,11 @@ function TopTechnologies() {
 
   return (
     <>
+   <div className='top-section'>
+    <hr className='top-hr'/>
+   <h1 className="top-tech">Top Technologies Offered</h1>
+   <hr className='top-hr'/>
+   </div>
       <div className="flex justify-center mt-5 mx-10 sm:mx-8 lg:mx-32">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
           {technologies.map((tech) => (

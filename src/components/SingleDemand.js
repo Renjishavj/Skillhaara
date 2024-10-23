@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "../assets/styles/style.css";
-import Logos from "../components/Logos"
+import Why from "./Why";
 function SingleDemand() {
   const { techId } = useParams();
 
@@ -59,7 +59,7 @@ function SingleDemand() {
       ) : (
         <p className="load">Loading...</p>
       )}
-      {/* <Logos/> */}
+      <Why/>
     </div>
   );
 }

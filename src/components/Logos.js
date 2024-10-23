@@ -1,11 +1,11 @@
 import React from 'react';
-import one from "../assets/images/1.png";
-import two from "../assets/images/2.png";
-import three from "../assets/images/3.png";
-import four from "../assets/images/4.png";
-import five from "../assets/images/5.png";
-import six from "../assets/images/6.png";
-import seven from "../assets/images/Logo (2).png";
+import one from "../assets/images/1.jpg";
+import two from "../assets/images/2.jpg";
+import three from "../assets/images/3.jpg";
+import four from "../assets/images/4.jpg";
+import five from "../assets/images/5.jpg";
+import six from "../assets/images/6.jpg";
+import seven from "../assets/images/7.jpg";
 import "../App.css";
 import ".././assets/styles/style.css";
 

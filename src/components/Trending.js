@@ -4,7 +4,11 @@ import TopTrending from './TopTrending'
 function Trending() {
   return (
     <>
+        <div className='top-section'>
+        <hr className='top-hr'/>
         <h1 className='top-tech'>Trending Courses</h1>
+        <hr className='top-hr'/>
+   </div>
       <TopTrending/>
     </>
   )

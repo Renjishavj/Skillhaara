@@ -6,7 +6,7 @@ import CustomerSupport from "./CustomerSupport"
 import HireFromUs from './HireFromUs';
 import CourseEnquiry from "./CourseEnquiry"
 import { Route, Routes,Link } from "react-router-dom";
-
+import Why from './Why';
 function Contactus() {
 
   const [activeButton, setActiveButton] = useState(null);
@@ -65,6 +65,7 @@ function Contactus() {
             <Route path="*" element={<CustomerSupport />} /> 
           </Routes>
       </div>
+      <Why/>
     </div>
   );
 }
