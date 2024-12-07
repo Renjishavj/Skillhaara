@@ -1,6 +1,6 @@
 import React from 'react'
 import TopTrending from './TopTrending'
-
+import "../assets/styles/style.css"
 function Trending() {
   return (
     <>

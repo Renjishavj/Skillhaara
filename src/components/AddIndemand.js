@@ -4,7 +4,7 @@ import DemandCourse from './DemandCourse'
 import DemandList from './DemandList'
 import SingleIndemand from './SingleIndemand'
 import EditDemand from './EditDemand'
-
+import "../assets/styles/style.css"
 function AddIndemand() {
   return (
     <div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate, Link } from "react-router-dom";
-
+import "../assets/styles/style.css"
 function ViewSingle() {
   const { courseId } = useParams();
   

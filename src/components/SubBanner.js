@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import work from "../assets/images/wor.webp";
 import place from "../assets/images/woo.webp";
 import learn from "../assets/images/lee.webp";
-
+import  "../assets/styles/style.css"
 const SubBanner = () => {
   // Set 'development' as the default active section
   const [activeSection, setActiveSection] = useState('development');
@@ -37,7 +37,7 @@ const SubBanner = () => {
         )}
 
         <div onClick={() => handleToggle('placement')} className="cursor-pointer sub-ban-headtwo">
-          Assured Job Placement
+          Assured Job Assistance
         </div>
         {activeSection === 'placement' && (
           <p className="desc-subban">

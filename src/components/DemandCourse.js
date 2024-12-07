@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import "../assets/styles/style.css"
 
 function DemandCourse() {
   const nav = useNavigate()

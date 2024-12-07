@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import "../assets/styles/style.css"
 
 function DemandList() {
   const [demands, setDemands] = useState([]);

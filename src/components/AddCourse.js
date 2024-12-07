@@ -8,7 +8,7 @@ import DemandCourse from "./DemandCourse";
 import SingleIndemand from "./SingleIndemand";
 import DemandList from "./DemandList";
 import EditDemand from "./EditDemand";
-
+import "../assets/styles/style.css"
 function AddCourse() {
   return (
     <div>

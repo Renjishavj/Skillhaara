@@ -6,6 +6,7 @@ import CustomerSupport from "./CustomerSupport"
 import HireFromUs from './HireFromUs';
 import CourseEnquiry from "./CourseEnquiry"
 import { Route, Routes,Link } from "react-router-dom";
+import "../assets/styles/style.css"
 import Why from './Why';
 function Contactus() {
 
@@ -57,8 +58,8 @@ function Contactus() {
       <hr className='cont-hr'/>
       <div>
           <Routes>
-            <Route path="customer" exact element={<CustomerSupport/>}/>
-            <Route path="course" element={<CourseEnquiry/>}/>
+            <Route path="customer"  element={<CustomerSupport/>}/>
+            <Route path="course" exact element={<CourseEnquiry/>}/>
             <Route path="franchise" element={<FranchiseEnquiry/>}/>
             <Route path="corporate" element={<CorporateTraining/>}/>
             <Route path="hire" element={<HireFromUs/>}/>

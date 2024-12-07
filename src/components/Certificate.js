@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import certificate from "../assets/images/certificate.jpg";
 import locker from "../assets/images/locker.png";
+import "../assets/styles/style.css";
 
 function Certificate() {
   const [studentId, setStudentId] = useState("");
   const [certificateData, setCertificateData] = useState(null);
   const [message, setMessage] = useState("");
+  const [showModal, setShowModal] = useState(false); // State to control modal visibility
 
   const handleVerify = async () => {
     try {
@@ -15,6 +17,7 @@ function Certificate() {
       if (response.data.message === "Verified") {
         setCertificateData(response.data.certificate); 
         setMessage(""); 
+        setShowModal(true); // Show modal on successful verification
       } else {
         setMessage("Certificate not found");
         setCertificateData(null); 
@@ -23,6 +26,11 @@ function Certificate() {
       setMessage("Certificate not found");
       setCertificateData(null); 
     }
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -65,16 +73,22 @@ function Certificate() {
             </div>
             <div>
               {message && <p className="verify-msg">{message}</p>}
-              {certificateData && (
-                <div className="cert-info">
-                  <p><strong>Name: {certificateData.name}</strong></p>
-                  <p><strong>Course: {certificateData.course}</strong></p>
-                </div>
-              )}
             </div>
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="modal">
+          <div className="modal-content bounce">
+            <span className="close-btn" onClick={closeModal}>×</span>
+            <h2 className="cert-hh">Certificate Details</h2>
+            <p><strong style={{color:"green"}} className="cert-det">Name: {certificateData.name}</strong></p>
+            <p><strong style={{color:"green"}} className="cert-det">Course: {certificateData.course}</strong></p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

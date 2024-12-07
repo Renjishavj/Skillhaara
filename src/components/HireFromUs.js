@@ -1,5 +1,7 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
+import "../assets/styles/style.css"; // Import your CSS file for styling
+import ReCAPTCHA from 'react-google-recaptcha';
 
 function HireFromUs() {
   const [formData, setFormData] = useState({
@@ -14,14 +16,19 @@ function HireFromUs() {
     message: "",
   });
 
+  const [captchaToken, setCaptchaToken] = useState(null);
   const [errors, setErrors] = useState({});
   const [submissionMessage, setSubmissionMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
- 
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token); // Update CAPTCHA token when CAPTCHA is solved
+  };
+
   const validate = () => {
     let validationErrors = {};
 
@@ -52,6 +59,9 @@ function HireFromUs() {
     if (!formData.message.trim()) {
       validationErrors.message = "Message is required";
     }
+    if (!captchaToken) {
+      validationErrors.captcha = "CAPTCHA is required";
+    }
 
     return validationErrors;
   };
@@ -73,6 +83,7 @@ function HireFromUs() {
           fresher: formData.experienced,
           jobLocation: formData.location,
           message: formData.message,
+          captchaToken, // Send CAPTCHA token to backend
         });
 
         if (response.status === 201) {
@@ -89,6 +100,8 @@ function HireFromUs() {
             message: "",
           });
           setErrors({});
+          setCaptchaToken(null); // Reset CAPTCHA
+          setIsModalOpen(true); // Open modal on success
         }
       } catch (error) {
         console.error("Error while submitting the hire enquiry:", error);
@@ -132,8 +145,7 @@ function HireFromUs() {
             onChange={handleChange}
             required
           />
-          {errors.mobileNumber && <small style={{color: "red"}} className="error">{errors.mobileNumber}</small>}  {/* Error message just below the input */}
-          
+          {errors.mobileNumber && <small style={{ color: "white" }} className="error">{errors.mobileNumber}</small>}
           <input
             type="email"
             name="email"
@@ -194,11 +206,30 @@ function HireFromUs() {
           ></textarea>
           {errors.message && <p className="error">{errors.message}</p>}
         </div>
+
+        {/* Add CAPTCHA field here */}
+        <ReCAPTCHA
+          sitekey="6LezOHEqAAAAAGocpY5W4qGBeaKwLAIYw9OfFc6m"
+          onChange={handleCaptchaChange}
+        />
+        {errors.captcha && <p className="error">{errors.captcha}</p>}
+
         <button type="submit" className="submit-btn">
           Submit
         </button>
-        {submissionMessage && <strong className="sub-msg">{submissionMessage}</strong>}
+        {/* {submissionMessage && <strong className="sub-msg">{submissionMessage}</strong>} */}
       </form>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>Form Submitted Successfully</h2>
+           
+            <button onClick={() => setIsModalOpen(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

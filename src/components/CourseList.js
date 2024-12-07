@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; 
-
+import "../assets/styles/style.css"
 function CourseList() {
   const [courses, setCourses] = useState([]);
   const navigate = useNavigate(); 

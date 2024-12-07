@@ -6,6 +6,7 @@ import four from "../assets/images/4.jpg";
 import five from "../assets/images/5.jpg";
 import six from "../assets/images/6.jpg";
 import seven from "../assets/images/7.jpg";
+import "../assets/styles/style.css"
 function Why() {
   return (
     <div className="why-container">

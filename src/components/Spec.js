@@ -5,7 +5,7 @@ import interactive from "../assets/images/interactive.png";
 import mentor from "../assets/images/mentor.png";
 import projects from "../assets/images/projects.jpg";
 import tools from "../assets/images/tools.png";
-
+import "../assets/styles/style.css"
 function Spec() {
   return (
     <div className="features-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 p-4">

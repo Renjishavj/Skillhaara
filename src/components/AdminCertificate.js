@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import "../assets/styles/style.css"
 function AdminCertificate() {
   const [formData, setFormData] = useState({
     studentId: '',

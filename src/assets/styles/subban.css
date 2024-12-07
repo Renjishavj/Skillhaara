@@ -1,0 +1,57 @@
+/* Default styles */
+.sub-ban-head, .sub-ban-headone, .sub-ban-headtwo {
+    font-weight: 600;
+    font-size: 28px;
+    color: #07023b;
+  }
+  .sub-ban-head:hover, .sub-ban-headone:hover, .sub-ban-headtwo:hover {
+    color: rgb(8, 30, 141);
+  }
+  
+  .desc-subban {
+    color: rgb(34, 33, 33);
+    font-size: 18px;
+    border-left: 4px solid #07023b;
+    padding-left: 5px;
+    text-align: justify;
+  }
+  
+  .sub-banner {
+    background-color: #f0eded;
+    margin-top: 20px;
+  }
+  
+  .bannimg {
+    width: 100%;
+    max-width: 400px;
+    object-fit: cover;
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (max-width: 1024px) {
+    .sub-ban-head, .sub-ban-headone, .sub-ban-headtwo {
+      font-size: 24px;
+      text-align: center;
+    }
+    .desc-subban {
+      font-size: 16px;
+    }
+  }
+  
+  /* Small devices (phones, 768px and below) */
+  @media (max-width: 768px) {
+    .sub-banner {
+      padding: 5px;
+    }
+  
+    .sub-ban-head, .sub-ban-headone, .sub-ban-headtwo {
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    .desc-subban {
+      font-size: 15px;
+      border-left: 3px solid #07023b;
+    }
+  }
+  

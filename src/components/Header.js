@@ -16,8 +16,8 @@ function Header() {
   return (
     <div>
       <nav className="nav-container">
-        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div className="relative flex h-16 items-center justify-between">
+        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 mm">
+          <div className="relative flex h-16 items-center ff">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <button
                 type="button"
@@ -68,7 +68,7 @@ function Header() {
                     onMouseEnter={() => setDropdownVisible(true)}
                     onMouseLeave={() => setDropdownVisible(false)}
                   >
-                    <button
+                    {/* <button
                       type="button"
                       className="inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-medium hover:text-gray-300 text-white"
                       id="menu-button"
@@ -135,8 +135,9 @@ function Header() {
                           </Link>
                         </div>
                       </div>
-                    )}
+                    )} */}
                   </div>
+                  
                   <Link
                     to="/aboutus"
                     className="rounded-md px-3 py-2 text-sm font-medium hover:text-gray-300 text-white"
@@ -155,10 +156,13 @@ function Header() {
                   >
                     CERTIFICATE VERIFICATION
                   </Link>
+                  <Link className="rounded-md px-3 py-2 text-sm font-medium hover:text-gray-300 text-white">
+                  REGISTRATION
+                  </Link>
                 </div>
               </div>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div className="absolute inset-y-0 right-0 flex items-center pr-4 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
                 type="button"
                 className="relative rounded-full p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"

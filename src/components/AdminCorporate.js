@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import "../assets/styles/style.css"
 function AdminCorporate() {
   const [corporateTrainings, setCorporateTrainings] = useState([]);
   const [loading, setLoading] = useState(true);

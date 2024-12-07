@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import "../assets/styles/style.css"
 function AdminHire() {
   const [hireEnquiries, setHireEnquiries] = useState([]);
   const [loading, setLoading] = useState(true);

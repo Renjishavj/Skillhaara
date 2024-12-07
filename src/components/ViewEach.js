@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 import SingleDemand from "./SingleDemand";
+import "../assets/styles/style.css";
 
 function ViewEach() {
   const { techId } = useParams();
@@ -18,6 +20,10 @@ function ViewEach() {
   });
   const [errors, setErrors] = useState({});
   const [submissionMessage, setSubmissionMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false); // state for modal visibility
+  const [captchaToken, setCaptchaToken] = useState(null);
+
+  const RECAPTCHA_SITE_KEY = process.env.REACT_APP_SITE_KEY;
 
   useEffect(() => {
     if (techId) {
@@ -62,8 +68,15 @@ function ViewEach() {
     if (!formData.message.trim()) {
       errors.message = "Message is required";
     }
+    if (!captchaToken) {
+      errors.captcha = "Please verify the CAPTCHA";
+    }
 
     return errors;
+  };
+
+  const handleCaptcha = (token) => {
+    setCaptchaToken(token);
   };
 
   const handleSubmit = async (e) => {
@@ -75,7 +88,7 @@ function ViewEach() {
       try {
         const response = await axios.post(
           "http://localhost:3300/user/course-enquiry",
-          formData
+          { ...formData, captchaToken }
         );
         if (response.status === 201) {
           setSubmissionMessage("Form submitted successfully!");
@@ -88,13 +101,21 @@ function ViewEach() {
             center: "",
             message: "",
           });
+          setCaptchaToken(null);
           setErrors({});
+          setIsModalOpen(true); // Open the modal upon successful submission
         }
       } catch (error) {
         setSubmissionMessage("Error occurred, can't submit Course Enquiry");
         console.error("There was an error!", error);
+        setIsModalOpen(true); // Open the modal to show error message
       }
     }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSubmissionMessage(""); // Clear the message when closing the modal
   };
 
   return (
@@ -111,10 +132,10 @@ function ViewEach() {
             />
             <div className="fex-vieweach">
               <div className="fex-one">
-               <div className="div-over">
-               <h1 className="overview-main">Course Overview</h1>
-               <p className="eda-desc">{courseDetails.overview}</p>
-               </div>
+                <div className="div-over">
+                  <h1 className="overview-main">Course Overview</h1>
+                  <p className="eda-desc">{courseDetails.overview}</p>
+                </div>
 
                 <div className="eda-form-div">
                   <div className="div-overv">
@@ -124,7 +145,7 @@ function ViewEach() {
                     </p>
                     <ul className="eda-ul" style={{ listStyle: "disc" }}>
                       {courseDetails.courses.map((course, index) => (
-                        <li key={index}>{course}</li>
+                        <li key={index} className="li-eda">{course}</li>
                       ))}
                     </ul>
                   </div>
@@ -132,7 +153,10 @@ function ViewEach() {
               </div>
               <div>
                 <div className="eda-form">
-                  <form className="responsive-form res-vieweach" onSubmit={handleSubmit}>
+                  <form
+                    className="responsive-form res-vieweach"
+                    onSubmit={handleSubmit}
+                  >
                     <p className="description">
                       "Interested in Our Courses? We’re Excited to Hear From
                       You!"
@@ -182,8 +206,9 @@ function ViewEach() {
                         required
                       >
                         <option value="">Select Center</option>
-                        <option value="Kochi">Kochi</option>
+                        <option value="Kochi">Aluva (Kochi)</option>
                         <option value="Thrissur">Thrissur</option>
+                        <option value="Thir">Thiruvananthapuram</option>
                       </select>
                       {errors.center && (
                         <p className="error">{errors.center}</p>
@@ -198,10 +223,7 @@ function ViewEach() {
                         required
                       >
                         <option value="">Select State</option>
-                        <option value="Uttar Pradesh">Uttar Pradesh</option>
                         <option value="Kerala">Kerala</option>
-                        <option value="Tamil Nadu">Tamil Nadu</option>
-                        <option value="Bangalore">Bangalore</option>
                       </select>
                       {errors.state && <p className="error">{errors.state}</p>}
 
@@ -212,9 +234,20 @@ function ViewEach() {
                         required
                       >
                         <option value="">Select City</option>
-                        <option value="Kochi">Kochi</option>
-                        <option value="Trivandrum">Trivandrum</option>
-                        <option value="Thrissur">Thrissur</option>
+<option value="Alappuzha">Alappuzha</option>
+<option value="Ernakulam">Ernakulam</option>
+<option value="Idukki">Idukki</option>
+<option value="Kannur">Kannur</option>
+<option value="Kasaragod">Kasaragod</option>
+<option value="Kollam">Kollam</option>
+<option value="Kottayam">Kottayam</option>
+<option value="Kozhikode">Kozhikode</option>
+<option value="Malappuram">Malappuram</option>
+<option value="Palakkad">Palakkad</option>
+<option value="Pathanamthitta">Pathanamthitta</option>
+<option value="Thiruvananthapuram">Thiruvananthapuram</option>
+<option value="Thrissur">Thrissur</option>
+<option value="Wayanad">Wayanad</option>
                       </select>
                       {errors.city && <p className="error">{errors.city}</p>}
                     </div>
@@ -232,19 +265,31 @@ function ViewEach() {
                       )}
                     </div>
 
+                    <ReCAPTCHA
+                       sitekey="6LezOHEqAAAAAGocpY5W4qGBeaKwLAIYw9OfFc6m"
+                      onChange={handleCaptcha}
+                    />
+                    {errors.captcha && (
+                      <p className="error">{errors.captcha}</p>
+                    )}
+
                     <button type="submit" className="submit-btn">
                       Submit
                     </button>
-
-                    {submissionMessage && (
-                      <strong className="sub-msg">{submissionMessage}</strong>
-                    )}
                   </form>
                 </div>
               </div>
             </div>
           </div>
         )
+      )}
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <p>{submissionMessage}</p>
+            <button onClick={closeModal}>Close</button>
+          </div>
+        </div>
       )}
       <SingleDemand />
     </div>

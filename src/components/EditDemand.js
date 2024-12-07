@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-
+import "../assets/styles/style.css"
 function EditDemand() {
   const { demandId } = useParams(); 
   const [demand, setDemand] = useState(null); 

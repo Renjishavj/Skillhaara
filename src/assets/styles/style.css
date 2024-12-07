@@ -4,13 +4,22 @@
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 .nav-container{
     background-color: rgb(10, 20, 60);
    
     
 }
-
+.mm{
+  margin-left: 10px;
+ 
+}
+/* .ff{
+  margin-right: -180px;
+} */
   .link:hover{
     background-color: rgb(182, 179, 179);
   }
@@ -37,10 +46,11 @@
     width: 100%;
   }
   .carousel-wrapper {
-    width: 100%;
-    overflow: hidden; 
     position: relative;
+    width: 100%;
+    overflow: hidden;
   }
+  
   
   .carousel-container {
     display: flex;
@@ -53,7 +63,26 @@
     object-fit: contain; /* Ensure the full image is visible */
   }
   
+  .dots-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
   
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #333;
+  }
   .top-tech {
     display: flex;
     justify-content: center;
@@ -476,6 +505,7 @@ margin-bottom: 20px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
+  margin-top: 20px;
 }
 
 
@@ -581,7 +611,7 @@ margin-bottom: 20px;
 }
 .sub-msg{
   color: white;
- margin-left: 120px;
+ margin-left: 80px;
  font-size: 20px;
  
 }
@@ -589,9 +619,11 @@ margin-bottom: 20px;
   display: flex;
   
 }
-.fex-one{
-  width: 900px;
- 
+.fex-one {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px; /* Add padding for spacing */
+  box-sizing: border-box;
 }
 .div-over{
   background-color: #dce1ea;
@@ -618,7 +650,7 @@ margin-bottom: 20px;
   .fex-one{
     display: flex;
     flex-direction: column;
-    width: 600px;
+    min-width: 600px;
   }
   .fex-vieweach{
     display: flex;
@@ -636,15 +668,17 @@ margin-bottom: 20px;
 
 @media (max-width: 480px) {
   .sub-msg {
-    margin-left: 20px; 
+    margin-left: 80px; 
     font-size: 16px; 
     text-align: center; 
   }
-  .fex-one{
+  .fex-one {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 90%; /* Slight padding for ultra-small screens */
+    min-width: unset; /* Remove fixed minimum width */
   }
+
   .fex-vieweach{
     display: flex;
     flex-direction: column;
@@ -656,6 +690,12 @@ margin-bottom: 20px;
   .div-overv{
     width: 100%;
     margin-left: 8px;
+  }
+}
+@media (max-width: 320px) {
+  .fex-one {
+    width: 100%; /* Full width for very small phones */
+    padding: 5px; /* Reduce padding for small screens */
   }
 }
 .verify-msg{
@@ -748,6 +788,7 @@ margin-bottom: 20px;
   text-align: justify;
   font-size: 18px;
   margin-top: 20px;
+  font-weight: 700;
 }
 .eda-desc-tech {
   margin-left: 120px;
@@ -755,10 +796,11 @@ margin-bottom: 20px;
   text-align: justify;
   font-size: 18px;
   max-width: 600px;
+  font-weight: 700;
 }
 @media screen and (max-width: 480px){
   .eda-desc-tech{
-    width: 350px;
+    width: 300px;
     margin-left: 20px;
     margin-top: 20px;
   } 
@@ -770,12 +812,15 @@ margin-bottom: 20px;
   font-weight: 700;
   color: rgb(10, 20, 60);
 }
-
+.li-eda{
+  font-weight: 700;
+}
 .eda-ul {
   margin-left: 140px;
   margin-right: 110px;
   text-align: justify;
   font-size: 18px;
+  font-weight: 700;
   margin-bottom: 100px;
 }
 .res-vieweach{
@@ -852,14 +897,15 @@ margin-bottom: 20px;
 
 @media screen and (max-width: 480px) {
   .eda-desc, .eda-ul, .eda-subhead {
-    margin-left: 20px;
-    margin-right: 20px;
+    /* margin-left: 20px; */
+    /* margin-right: 20px; */
     font-size: 18px;
     font-weight: 700;
     
   }
   ul.eda-desc{
-    margin-left: 40px;
+    margin-left: 20px;
+    
   }
   .square-fex{
     font-weight: 700;
@@ -1725,4 +1771,353 @@ display: none;
   flex-direction: column;
   gap: 0px;
  padding-top: 30px;
+}
+
+/* popup */
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal-content button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #45a049;
+}
+.cc{
+  margin: 0 ;
+ 
+  padding: 0 ;
+}
+
+/* scholorship page */
+/* Main container styling */
+
+.main-container {
+  display: flex;
+  margin-left: 110px;
+  margin-right: 110px;
+  margin-top: 50px;
+  gap: 16px; /* Space between the two divs */
+}
+
+/* Styling for equal divs */
+.equal-div {
+  flex: 1; /* Makes both divs take equal width */
+
+  padding: 20px;
+  text-align: center;
+  color: #07023b;
+  border-radius: 8px;
+}
+.pres-img{
+  width: 100%;
+ 
+}
+.equal-div1 {
+  flex: 1; /* Makes both divs take equal width */
+
+  padding: 20px;
+  text-align: center;
+  color: #07023b;
+  border-radius: 8px;
+}
+.sc-img{
+  display: flex;
+  justify-content: center;
+}
+/* Responsive styling */
+@media (min-width: 768px) { /* For smaller screens */
+  .main-container {
+    flex-direction: column; /* Stack divs vertically */
+  }
+  .equal-div1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+  }
+  
+  .pres-img {
+    min-width: 350px;
+    max-width: 100%; /* Ensure the image doesn't exceed container's width */
+    display: block; /* Make image a block element */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+  .main-container {
+    margin-left: 50px;
+    
+  }
+}
+@media (max-width: 480px) { /* For smaller screens */
+  .main-container {
+    flex-direction: column; /* Stack divs vertically */
+    margin-left: 0; /* Adjust margin to remove left spacing */
+  }
+
+  .equal-div1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+  }
+  
+  .pres-img {
+    min-width: 350px;
+    max-width: 100%; /* Ensure the image doesn't exceed container's width */
+    display: block; /* Make image a block element */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+  .main-container {
+    margin-left: 50px;
+    
+  }
+  
+}
+/* Container styling */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh; /* Full viewport height for centering */
+  padding: 20px; /* Ensure spacing for smaller screens */
+  box-sizing: border-box;
+}
+
+/* Form card styling */
+.form-card {
+  background: #ffffff;
+  padding: 20px; /* Reduce padding for smaller screens */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Allow the form to stretch within the container */
+  max-width: 570px; /* Limit the maximum width for larger screens */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Form title styling */
+.form-title {
+  margin-bottom: 20px;
+  font-size: 1.5rem; /* Use responsive font size */
+  font-weight: 600;
+  color: #07023b;
+ 
+  border-bottom: 2px solid #9face6;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: white;
+}
+.responsive-form1{
+  /* min-width: 500px; */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color:#07023b;
+}
+.form-group input,
+.form-group select {
+  width: 80%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #9face6;
+  outline: none;
+}
+
+/* Submit button styling */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem; /* Use scalable font size */
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to right, #74ebd5, #9face6);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #9face6, #74ebd5);
+}
+
+/* Responsive styling using media queries */
+@media (max-width: 768px) {
+  .form-card {
+    padding: 15px; /* Adjust padding for tablets and smaller screens */
+    width: 100%; /* Allow the form to stretch within the container */
+  min-width: 500px;
+  }
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .form-title {
+    font-size: 1.25rem; /* Scale down title font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .form-card {
+    padding: 10px;
+    width: 100%; /* Allow the form to stretch within the container */
+  min-width: 400px;
+  margin-left: 60px;
+  
+   /* Further reduce padding for mobile screens */
+  }
+
+  .form-title {
+    font-size: 1.1rem; /* Scale down title font size for smaller screens */
+  }
+  .form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+}
+
+.skill-capt{
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+
+}
+.scholor-img{
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards; /* Fade-in animation */
+}
+
+/* Bounce animation for modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal content box with a bounce effect */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9); /* Initial scale */
+  animation: bounce 0.6s ease-out forwards; /* Bounce effect */
+}
+
+/* Bounce keyframes */
+@keyframes bounce {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Close button style */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Hover effect on close button */
+.close-btn:hover {
+  transform: scale(1.2);
+}
+.cert-hh{
+  font-size:25px;
+  color: #07023b;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.cert-det{
+  font-size: 18px;
 }

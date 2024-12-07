@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../assets/styles/style.css"
 
 function EditCourse() {
   const { courseId } = useParams();

@@ -25,7 +25,7 @@ function Aboutus() {
       <p>
       Skill Haara is a widespread talent development organization which is enthusiastic in empowering knowledge and innovation, cultivating future abilities, building skilled human resources and boosting workforce talent worldwide. 
       
-      Since our founding in 2007, Skill Haara is a one-stop shop for all employable needs and training requirements. We deliver a diverse range of learning and talent development programs to millions of individual and corporate learners in futuristic domains through our various outlets. 
+      Since our founding in 2017, Skill Haara is a one-stop shop for all employable needs and training requirements. We deliver a diverse range of learning and talent development programs to millions of individual and corporate learners in futuristic domains through our various outlets. 
       </p>
       <p>
       Our programs are crafted by Industry Experts and Product Developers with clear learning pathways and practical projects, through which we humbly assist interested individual and enterprises in benchmarking skills across jobs and developing safe, dependable products
